@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title%} 
+Adicionar Tarefa - {{block.super}}
+{% endblock title%}
+{% block body%}
+<div class="container">
+   <h4>Adicionar Tarefa</h4>
+   {% include "core/partials/msg.html" %}
+   <div class="row">
+      <form action ="." method="POST">
+         {% csrf_token %}
+         {% include "core/partials/task_form.html" %}
+      </form>
+   </div>
+   {% comment %} {% include "core/partials/collapsable_category_list_table.html" %} {% endcomment %}
+</div>
+{% endblock body%}

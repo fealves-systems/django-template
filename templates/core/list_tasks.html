@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title%} 
+Listar Tarefas - {{block.super}}
+{% endblock title%}
+{% block body%}
+<div class="container">
+   <h4>Lista de Tarefas</h4>
+   {% include "core/partials/msg.html" %}
+   <div class="row">
+      {% include "core/partials/task_list_table.html" %}
+   </div>
+</div>
+{% endblock body%}

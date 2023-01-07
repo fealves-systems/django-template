@@ -1,0 +1,9 @@
+{% load widget_tweaks %}
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.username.id_for_label }}">Login</label>
+   {{ form.username|add_class:"form-control"}}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.password.id_for_label }}">Senha</label>
+   {{ form.password|add_class:"form-control"|attr:"type:password"}}
+</div>

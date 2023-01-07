@@ -1,0 +1,12 @@
+{% load widget_tweaks %}
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.name.id_for_label }}">Nome da Categoria</label>
+   {{ form.name|add_class:"form-control"|attr:"autofocus"}}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.description.id_for_label }}">Descricao</label>
+   {{ form.description|add_class:"form-control" }}
+</div>
+<div class="col-md-6 mb-3">
+   <button type="submit" class="btn btn-primary mb-2">Salvar</button>
+</div>

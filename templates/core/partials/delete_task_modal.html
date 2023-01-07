@@ -1,0 +1,35 @@
+<div class="modal fade" id="confirmDeleteModal" caller-id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+     <div class="modal-content">
+        <div class="modal-header">
+           <h1 class="modal-title fs-5" id="confirmDeleteModalLabel">Modal title</h1>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body confirm-delete">
+           Esta acão é definitiva. Tem certeza que deseja continuar?
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+           <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="confirmDeleteModalButton">Excluir</button>
+        </div>
+     </div>
+  </div>
+</div>
+<script>
+  const deleteModal = document.getElementById('confirmDeleteModal')
+  const confirmDeleteModalButton = document.getElementById('confirmDeleteModalButton')
+  const confirmDeleteModalLabel = document.getElementById('confirmDeleteModalLabel')
+  redirect = ""
+  confirmDeleteModalButton.addEventListener('click', event => {
+      window.location = redirect
+  })
+  
+  deleteModal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget
+    redirect = button.href
+    const taskId = button.getAttribute('data-bs-taskid')
+    const taskName = button.getAttribute('data-bs-taskname')
+    confirmDeleteModalLabel.textContent = 'Excluir Tarefa: '+taskId+' - '+taskName+'?'
+  })
+  
+</script>

@@ -1,0 +1,28 @@
+{% load widget_tweaks %}
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.name.id_for_label }}">Nome da Categoria</label>
+   {{ form.name|add_class:"form-control"|attr:"autofocus"}}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.description.id_for_label }}">Descricao</label>
+   {{ form.description|add_class:"form-control" }}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.end_date.id_for_label }}">Data de Finalizacao</label>
+   {{ form.end_date|add_class:"form-control jq-datetimepicker" }}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.priority.id_for_label }}">Prioridade</label>
+   {{ form.priority|add_class:"form-control" }}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.category.id_for_label }}">Categoria</label>
+   {{ form.category|add_class:"form-control js-sl2-basic-multiple" }}
+</div>
+<div class="col-md-6 mb-3">
+   <label class="form-label" for="{{ form.status.id_for_label }}">Status</label>
+   {{ form.status|add_class:"form-control" }}
+</div>
+<div class="col-md-6 mb-3">
+   <button type="submit" class="btn btn-primary mb-2">Salvar</button>
+</div>

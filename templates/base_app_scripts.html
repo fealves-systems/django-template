@@ -1,0 +1,19 @@
+<script>
+    $( function() {
+        $( ".jq-datetimepicker" ).datepicker({
+            dateFormat: "dd/mm/yy",
+            dayNameShort: [ "Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+            dayNamesMin:  [ "Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+            monthNames: [ "Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+        });
+        
+        $( "#anim" ).on( "change", function() {
+            $( ".jq-datetimepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('.js-sl2-basic-multiple').select2();
+    });
+</script>

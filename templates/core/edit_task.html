@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title%} 
+Editar Tarefa - {{block.super}}
+{% endblock title%}
+{% block body%}
+<div class="container">
+   <h4>Editar Tarefa</h4>
+   {% include "core/partials/msg.html" %}
+   <div class="row">
+      <form action ="{% url 'tasks:edit_task' id_task %}" method="POST">
+         {% csrf_token %}
+         {% include "core/partials/task_form.html" %}
+      </form>
+   </div>
+</div>
+{% endblock body%}

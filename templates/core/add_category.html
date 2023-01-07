@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title%} 
+Adicionar Categoria - {{block.super}}
+{% endblock title%}
+{% block body%}
+<div class="container">
+   <h4>Adicionar Categoria</h4>
+   {% include "core/partials/msg.html" %}
+   <div class="row">
+      <form action ="." method="POST">
+         {% csrf_token %}
+         {% include "core/partials/category_form.html" %}
+      </form>
+   </div>
+   {% include "core/partials/collapsable_category_list_table.html" %}
+</div>
+{% endblock body%}

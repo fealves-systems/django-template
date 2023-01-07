@@ -1,0 +1,7 @@
+django
+psycopg2-binary
+Pillow
+django-cpf
+django-imagekit
+django-widget-tweaks
+django-select2

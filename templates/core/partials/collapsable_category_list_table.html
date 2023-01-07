@@ -1,0 +1,22 @@
+<p>
+    <button id="btn_colapse_categories" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsecategories" aria-expanded="false" aria-controls="collapsecategories">
+    Mostrar Categorias
+    </button>
+ </p>
+ <div class="collapse" id="collapsecategories">
+    <div class="card card-body">
+       {% include "core/partials/category_list_table.html" %}
+    </div>
+ </div>
+ <script>
+    const myCollapsible = document.getElementById('collapsecategories')
+    myCollapsible.addEventListener('hidden.bs.collapse', event => {
+        actionButon = document.getElementById('btn_colapse_categories').innerText = "Mostrar Categorias"
+        console.log('1')
+    })
+    myCollapsible.addEventListener('show.bs.collapse', event => {
+        actionButon = document.getElementById('btn_colapse_categories').innerText = "Esconder Categorias"
+        console.log('2')
+    })
+    
+ </script>
