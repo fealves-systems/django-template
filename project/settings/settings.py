@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 from pathlib import Path
 import os
 import sys
@@ -20,13 +21,13 @@ APPS_DIR = os.path.join(BASE_DIR, 'apps')
 sys.path.insert(0, APPS_DIR)
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-#Necessary when working with abstract user model
-#AUTH_USER_MODEL = 'core.User'
-#REMEMBER Error happens if you ran default auth app migrations and later changed the AUTH_USER_MODEL in settings.py. You can try following:
+# Necessary when working with abstract user model
+# AUTH_USER_MODEL = 'core.User'
+# REMEMBER Error happens if you ran default auth app migrations and later changed the AUTH_USER_MODEL in settings.py. You can try following:
 # comment AUTH_USER_MODEL in settings.py so it points to default User model
-#python manage.py migrate auth zero
+# python manage.py migrate auth zero
 # uncomment to be AUTH_USER_MODEL='recommend.AuthUser'
-#python manage.py migrate auth
+# python manage.py migrate auth
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -46,7 +47,7 @@ THIRD_PARTY_APPS = [
     'cpf_field',
     'imagekit',
     'widget_tweaks'
-    ]
+]
 
 PROJECT_APPS = [
     'core.apps.CoreConfig',
@@ -85,7 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success',
@@ -117,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -143,7 +142,6 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles'),
 ]
-
 
 
 # Default primary key field type

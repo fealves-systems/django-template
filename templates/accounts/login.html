@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title%} 
+{% block title%}
 Login - {{block.super}}
 {% endblock title%}
 {% block body%}
@@ -7,7 +7,7 @@ Login - {{block.super}}
    <h3>Login do Usuario</h3>
    {% include "accounts/partials/msg.html" %}
    <div class="row">
-      <form action ="." method="POST">
+      <form action="." method="POST">
          {% csrf_token %}
          {% include "accounts/partials/user_form.html" %}
          <div class="col-md-6 mb-3">

@@ -1,1 +1,1 @@
-from .HomeView import *
+from .core_example_views import *

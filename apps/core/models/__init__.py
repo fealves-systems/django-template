@@ -1,1 +1,1 @@
-from .tarefas import *
+from .core_example_models import *

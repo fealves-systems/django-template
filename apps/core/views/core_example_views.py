@@ -11,6 +11,7 @@ from core.models import Category, Task
 def Homeview(request):
     return render(request, 'base.html', {})
 
+
 @login_required(login_url="/contas/login/")
 def HomeviewTest(request, id):
     context = {
@@ -40,6 +41,7 @@ def AddCategory(request):
     }
     return render(request, template_name, context)
 
+
 @login_required(login_url="/contas/login/")
 def ListCategories(request):
     print("list_category request:", request, request.user),
@@ -49,6 +51,7 @@ def ListCategories(request):
         'categories': categories,
     }
     return render(request, template_name, context)
+
 
 @login_required(login_url="/contas/login/")
 def EditCategory(request, id_category):
@@ -103,6 +106,7 @@ def AddTask(request):
     }
     return render(request, template_name, context)
 
+
 @login_required(login_url="/contas/login/")
 def ListTasks(request):
     print("list_tasks request:", request, request.user),
@@ -112,6 +116,7 @@ def ListTasks(request):
         'tasks': tasks,
     }
     return render(request, template_name, context)
+
 
 @login_required(login_url="/contas/login/")
 def EditTask(request, id_task):
@@ -129,6 +134,7 @@ def EditTask(request, id_task):
         'form': form,
     }
     return render(request, template_name, context)
+
 
 @login_required(login_url="/contas/login/")
 def DeleteTask(request, id_task):

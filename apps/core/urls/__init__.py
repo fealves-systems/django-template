@@ -1,1 +1,1 @@
-from .HomeUrl import *
+from .core_example_urls import *
